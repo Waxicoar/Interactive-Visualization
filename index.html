@@ -1,13 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tracking Global Temperature Projections</title>
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="script.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How is the world warming?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>Tracking Global Temperature Projections</h1>
-  <div id="chart"></div>
+    <main>
+        <h1>How is the world warming?</h1>
+        <p class="subtitle">The SSPs are &ldquo;what-if&rdquo; storylines the climate research community (IIASA-led) built around 2010 so CMIP6 models could be compared on common assumptions. They are not forecasts. Each pairs a scenario with an emissions (and thus climate) trajectory.</p>
+
+        <div class="toolbar">
+            <span class="toolbar-label">Scenario</span>
+            <div class="scenario-buttons" id="scenario-buttons">
+                <button type="button" data-id="ssp126">SSP1-2.6 <span class="btn-sub">sustainability</span></button>
+                <button type="button" data-id="ssp245" class="active">SSP2-4.5 <span class="btn-sub">middle of the road</span></button>
+                <button type="button" data-id="ssp585">SSP5-8.5 <span class="btn-sub">fossil-fueled</span></button>
+            </div>
+        </div>
+
+        <div class="timeline-block">
+            <div class="year-display">
+                <span class="year-chip" id="yearChip"></span>
+                Year <strong id="yearOut">2050</strong>
+            </div>
+            <input id="year" type="range" min="2015" max="2100" value="2050">
+            <div class="year-labels">
+                <span>2015</span><span>2030</span><span>2050</span><span>2075</span><span>2100</span>
+            </div>
+        </div>
+
+        <div class="map-wrap">
+            <svg id="map" viewBox="0 0 900 420" role="img" aria-label="World map colored by temperature anomaly across latitude bands"></svg>
+            <div class="tooltip" id="tooltip"></div>
+        </div>
+
+        <div class="legend" id="legend"></div>
+
+        <section class="writeup">
+            <h2>Scenarios</h2>
+            <dl class="scenarios-dl">
+                <dt>SSP1-2.6</dt>
+                <dd>A greener world. Emissions fall quickly as the world shifts to clean energy, uses land more carefully, and population grows more slowly. Warming levels off early, closer to the goals set in the Paris Agreement.</dd>
+                <dt>SSP2-4.5</dt>
+                <dd>A middle path. Some progress is made, but slowly and unevenly, and emissions keep rising for a while before peaking. Roughly what happens if today&rsquo;s trends continue with modest improvements.</dd>
+                <dt>SSP5-8.5</dt>
+                <dd>A high-emissions world. Coal and oil keep powering fast economic growth, energy use climbs, and there is little effort to cut emissions. The classic worst-case picture of what could happen.</dd>
+            </dl>
+        </section>
+
+        <section class="writeup">
+            <h2>Data and visual encodings</h2>
+        </section>
+
+        <section class="writeup">
+            <h2>Interaction and alternatives</h2>
+        </section>
+
+        <section class="writeup">
+            <h2>Challenges</h2>
+        </section>
+
+        <p class="source">Source: CMIP6 CanESM5 (r1i1p1f1), annual means, cosine-latitude weighted; anomalies use each region&rsquo;s own 1850&ndash;1900 baseline. Temperate bands are interpolated from adjacent measured bands. One model, not a multi-model consensus.</p>
+    </main>
 </body>
 </html>
