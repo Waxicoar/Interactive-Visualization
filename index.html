@@ -55,14 +55,25 @@
 
         <section class="writeup">
             <h2>Data and visual encodings</h2>
+            <p>The map shows temperature projections from the CMIP6 CanESM5 model from 2015 to 2100 under three scenarios (SSP1-2.6, SSP2-4.5, and SSP5-8.5). It shows five latitude bands: the Arctic (60–90°N), northern temperate zone (23.5–60°N), Tropics (23.5°S–23.5°N), southern temperate zone (23.5–60°S), and Antarctic (60–90°S). We use the dataset’s area-weighted averages for the Arctic, Tropics, and Antarctic. We estimate warming in the northern temperate zone by averaging the Arctic and Tropics values. For the southern temperate zone, we average the Tropics and Antarctic values.</p>
+            <p>Temperature anomaly here means the difference between a region’s annual mean and its own 1850–1900 mean, which is the pre-industrial baseline used by the IPCC. A value of +2°C means 2°C warmer than pre-industrial, not an absolute temperature. Each region uses its own baseline, so cross-region comparison is about relative change as well.</p>
+            <p>Readers can compare warming across regions, years, and scenarios. For example, under SSP5-8.5 in 2100, the model projects about 16°C of warming in the Arctic and about 6.7°C in the Tropics. Readers can move the year slider to see how warming changes over time. They can also keep the year fixed and switch scenarios to see how much warming the model projects for the same region under different emissions pathways.</p>
         </section>
 
         <section class="writeup">
             <h2>Interaction and alternatives</h2>
+            <p>Try setting the scenario to SSP5-8.5 and drag the year slider to 2100. All bands shift toward red, but the Arctic deepens far more than the Tropics. Now click the Arctic band on the map or its sidebar label: the map animates to focus on that band and a callout appears inside the map comparing all three scenarios at 2025, 2050, 2075, and 2100. Click the band again to return to the full map.</p>
+            <p>We used five latitude bands to show how warming varies across regions. We blended the colors over about 4° of latitude at each boundary to avoid sharp stripes. We kept the same color scale for every year and scenario, so the same shade always represents the same amount of warming. Readers can move the year slider intuitively to see how warming changes over time or keep the year fixed and switch scenarios to compare them.</p>
+            <p>We considered showing all 15 lines on one chart, one for each combination of region and scenario. This would let readers compare warming trends over time, but it would be hard to pick out the difference between two regions in a single year, and the visual density can be overwhelming. We made a line chart prototype allowing for choosing a region and seeing all three scenarios, and found out that reducing to three lines fixes the clutter but hides a direct regional comparison. Ultimately, we chose the map because it lets readers compare several regions at a glance for the same year and scenario.</p>
+        </section>
+        
+        <section class="writeup">
+            <h2>Team Contribution</h2>
+            <p></p>
         </section>
 
         <section class="writeup">
-            <h2>Challenges</h2>
+            <h2>Time and Challenges</h2>
         </section>
 
         <p class="source">Source: CMIP6 CanESM5 (r1i1p1f1), annual means, cosine-latitude weighted; anomalies use each region&rsquo;s own 1850&ndash;1900 baseline. Temperate bands are interpolated from adjacent measured bands. One model, not a multi-model consensus.</p>
