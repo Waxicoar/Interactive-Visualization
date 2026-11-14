@@ -69,11 +69,16 @@
         
         <section class="writeup">
             <h2>Team Contribution</h2>
-            <p></p>
+            <p>Andy (about 6 hours) changed the line chart prototype into a world map and polished the design of the world map visualization. Also, Andy wrote the first draft for the write-up.</p>
+            <p>Yuxuan —(about 7 hours)  preprocessed the data and created projection data for visualization, deployed webpage through github pages, built a line chart prototype and refined the time and challenges section.</p>
+            <p>Sungsan (about 5 hours total) built a line chart prototype that let readers select a region and compare the three climate scenarios. Sungsan also reviewed the write-up and suggested edits to explain how the map estimates warming in the temperate zones and why the team chose the map.</p>
         </section>
 
         <section class="writeup">
             <h2>Time and Challenges</h2>
+            <p>The most time-consuming part was building the interactive world map with D3. One major challenge was the dataset only contained temperature data for certain latitude bands, making it difficult to display warming continuously across the world. We hence interpolated missing values using neighbourhood region and applied a color gradient for temperature difference. Implementing interactions was also difficult. To make sure the features work smoothly together, multiple visual elements need to update consistently based on user input. It took us lots of effort in testing and debugging the interactions to handle this challenge. </p>
+            <p>Data preprocessing also took massive time. The hardest part was processing the CMIP6 dataset into a format suitable for visualization. CMIP6 was a massive dataset stored in cloud-hosted Zarr stores. We had to patiently extract and preprocess temperature data into manageable format. </p>
+            <p>During the entire project, we encountered some other minor challenges. For instance, when rendering latitude bands as polygons, D3’s spherical winding rules caused some incorrect shapes. This challenge got resolved when we applied the geographic color gradient to the map. We also encountered difficulties in maintaining consistent colors across different year and ssp scenarios, since automatically adjusting the color scale can lead to inaccurate comparisons. We dealt with it by using a fixed color scale across all scenarios and years. </p>
         </section>
 
         <p class="source">Source: CMIP6 CanESM5 (r1i1p1f1), annual means, cosine-latitude weighted; anomalies use each region&rsquo;s own 1850&ndash;1900 baseline. Temperate bands are interpolated from adjacent measured bands. One model, not a multi-model consensus.</p>
