@@ -135,8 +135,8 @@ h1 { font-size: clamp(24px, 4vw, 34px); line-height: 1.15; margin-bottom: 6px; }
 }
 .writeup p,
 .writeup ul {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: #3a5060;
     margin: 0 0 10px;
     max-width: 820px;
